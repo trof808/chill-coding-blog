@@ -17,7 +17,16 @@ const IndexPage = ({ data }) => {
           return (
             <article key={node.id} className={classNames('article-item')}>
               <Link to={disabled ? '#' : node.fields.slug} className={classNames({ disabled: disabled })}>{node.frontmatter.title}</Link>
-              <span id='article-date'>{disabled ? '⌛ Ожидает публикации...' : `📅 ${node.frontmatter.date}`}</span>
+              <div id='article-info'>
+                <span id='article-date'>{disabled ? '⌛ Ожидает публикации...' : `📅 ${node.frontmatter.date}`}</span>
+                <span id='article-tags'>
+                {node.frontmatter.tags.map(t => {
+                  return (
+                    `#${t}`
+                  )
+                })}
+              </span>
+              </div>
             </article>
           )
         })}

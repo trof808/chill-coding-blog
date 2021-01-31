@@ -1,6 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;700&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300700&display=swap')
 @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap')
-@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400700&display=swap')
+
+@import variables
 
 html
   -ms-text-size-adjust: 100%
@@ -466,7 +468,7 @@ h1#logo
     text-shadow: none
     background-image: none
   > p
-    color: #ee6f57
+    color: $accent_color
     font-size: 25px
 
 article
@@ -484,8 +486,10 @@ article
   display: flex
   flex-direction: column
   margin-top: 30px
-  > span#article-date
+  > div#article-info
     margin-top: 10px
+    > span
+      margin-right: 10px
   > a.disabled
     pointer-events: none
     cursor: default
@@ -495,3 +499,18 @@ article
   h1#logo
     > a
       font-size: 3.5rem
+
+//.gatsby-highlight-code-line
+//  background-color: #bbfff9
+//  display: block
+//  margin-right: -1em
+//  margin-left: -1em
+//  padding-right: 1em
+//  padding-left: 0.75em
+//  border-left: 0.25em solid #f99
+//
+.gatsby-highlight
+  border-radius: 0.3em
+  margin: 1em 0
+  //padding: 1em
+  overflow: auto
