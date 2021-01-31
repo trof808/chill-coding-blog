@@ -7,9 +7,8 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 
-import Header from "./header"
 import "./layout.sass"
 
 const Layout = ({ children }) => {
@@ -25,10 +24,8 @@ const Layout = ({ children }) => {
       }
     }
   `)
-  console.log(data.sitePage.path);
   return (
     <>
-      {/*<Header siteTitle={data.site.siteMetadata?.title || `Title`} />*/}
       <div
         style={{
           margin: `3em auto`,
@@ -38,7 +35,7 @@ const Layout = ({ children }) => {
       >
         <header>
           <h1 id='logo'>
-            Chill<span>.Coding</span>
+            <Link to='/'>Chill<span>.Coding</span></Link>
             <p>Blog</p>
           </h1>
           <div>

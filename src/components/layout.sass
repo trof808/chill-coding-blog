@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;700&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&display=swap')
+
 html
   -ms-text-size-adjust: 100%
   -webkit-text-size-adjust: 100%
@@ -10,7 +14,7 @@ body
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
   color: hsla(0, 0%, 0%, 0.8)
-  font-family: georgia, serif
+  font-family: 'Balsamiq Sans', georgia, serif
   font-weight: normal
   word-wrap: break-word
   font-kerning: normal
@@ -79,7 +83,7 @@ h1
   padding: 0
   margin: 0 0 1.45rem
   color: inherit
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif
+  font-family: 'Balsamiq Sans', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif
   font-weight: bold
   text-rendering: optimizeLegibility
   font-size: 2.25rem
@@ -453,8 +457,32 @@ pre tt:after
 
 
 h1#logo
-  color: #30475e
+  color: #1f3c88
+  font-weight: 700
+  > a
+    font-size: 4.25rem
+    text-decoration: none
+    color: #070d59
+    text-shadow: none
+    background-image: none
   > p
-    color: #f05454
+    color: #ee6f57
     font-size: 25px
 
+article
+  > a
+    font-size: 2.5rem
+    text-decoration: none
+    font-weight: 800
+    text-shadow: none
+    background-image: none
+    color: #1f3c88
+    font-family: 'Balsamiq Sans',serif
+    line-height: 1
+
+.article-item
+  display: flex
+  flex-direction: column
+  margin-top: 30px
+  > span#article-date
+    margin-top: 10px
