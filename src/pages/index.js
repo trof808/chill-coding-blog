@@ -8,7 +8,7 @@ const IndexPage = ({ data }) => {
   console.log(data);
   return (
     <Layout>
-      <SEO title="Home"/>
+      <SEO title="Главная"/>
       <div>
         {data.allMarkdownRemark.edges.map(({ node }) => {
           return (
