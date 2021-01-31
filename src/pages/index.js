@@ -4,6 +4,8 @@ import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
+import classNames from 'classnames/bind';
+
 const IndexPage = ({ data }) => {
   console.log(data);
   return (
@@ -11,10 +13,11 @@ const IndexPage = ({ data }) => {
       <SEO title="Главная"/>
       <div>
         {data.allMarkdownRemark.edges.map(({ node }) => {
+          const disabled = node.frontmatter.active === 'false';
           return (
-            <article key={node.id} className='article-item'>
-              <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
-              <span id='article-date'>{node.frontmatter.date}</span>
+            <article key={node.id} className={classNames('article-item')}>
+              <Link to={disabled ? '#' : node.fields.slug} className={classNames({ disabled: disabled })}>{node.frontmatter.title}</Link>
+              <span id='article-date'>{disabled ? '⌛ Ожидает публикации...' : `📅 ${node.frontmatter.date}`}</span>
             </article>
           )
         })}
@@ -27,7 +30,10 @@ export default IndexPage
 
 export const query = graphql`
   {
-    allMarkdownRemark {
+    allMarkdownRemark(sort: {
+      fields: [frontmatter___date]
+      order: ASC
+    }) {
       edges {
         node {
           excerpt
@@ -36,6 +42,8 @@ export const query = graphql`
           frontmatter {
             title
             date(formatString: "DD MMMM, YYYY")
+            active
+            tags
           }
           fields {
             slug
