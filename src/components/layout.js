@@ -10,7 +10,7 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
-import "./layout.css"
+import "./layout.sass"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -19,20 +19,34 @@ const Layout = ({ children }) => {
         siteMetadata {
           title
         }
+      },
+      sitePage {
+        path
       }
     }
   `)
-
+  console.log(data.sitePage.path);
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+      {/*<Header siteTitle={data.site.siteMetadata?.title || `Title`} />*/}
       <div
         style={{
-          margin: `0 auto`,
+          margin: `3em auto`,
           maxWidth: 960,
           padding: `0 1.0875rem 1.45rem`,
         }}
       >
+        <header>
+          <h1 id='logo'>
+            Chill<span>.Coding</span>
+            <p>Blog</p>
+          </h1>
+          <div>
+            <a href="https://t.me/chillcoding"><img src="" alt=""/></a>
+            <a href=""></a>
+            <a href=""></a>
+          </div>
+        </header>
         <main>{children}</main>
         <footer
           style={{
@@ -41,7 +55,7 @@ const Layout = ({ children }) => {
         >
           © {new Date().getFullYear()}, Built with
           {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
+          <span>chill.coding</span>
         </footer>
       </div>
     </>
