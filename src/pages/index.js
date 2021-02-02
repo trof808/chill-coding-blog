@@ -20,9 +20,9 @@ const IndexPage = ({ data }) => {
               <div id='article-info'>
                 <span id='article-date'>{disabled ? '⌛ Ожидает публикации...' : `📅 ${node.frontmatter.date}`}</span>
                 <span id='article-tags'>
-                {node.frontmatter.tags.map(t => {
+                {node.frontmatter.tags.map((t, i) => {
                   return (
-                    `#${t}`
+                    `${i !== 0 ? ', ' : ''}#${t}`
                   )
                 })}
               </span>
@@ -41,7 +41,7 @@ export const query = graphql`
   {
     allMarkdownRemark(sort: {
       fields: [frontmatter___date]
-      order: ASC
+      order: DESC
     }) {
       edges {
         node {
