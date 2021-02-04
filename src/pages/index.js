@@ -7,7 +7,6 @@ import SEO from "../components/seo"
 import classNames from 'classnames/bind';
 
 const IndexPage = ({ data }) => {
-  console.log(data);
   return (
     <Layout>
       <SEO title="Главная"/>
@@ -19,6 +18,7 @@ const IndexPage = ({ data }) => {
               <Link to={disabled ? '#' : node.fields.slug} className={classNames({ disabled: disabled })}>{node.frontmatter.title}</Link>
               <div id='article-info'>
                 <span id='article-date'>{disabled ? '⌛ Ожидает публикации...' : `📅 ${node.frontmatter.date}`}</span>
+                <span id='article-date'>{node.frontmatter.ready === 'false' ? `✍ Будет дополняться` : ""}</span>
                 <span id='article-tags'>
                 {node.frontmatter.tags.map((t, i) => {
                   return (
@@ -53,6 +53,7 @@ export const query = graphql`
             date(formatString: "DD MMMM, YYYY")
             active
             tags
+            ready
           }
           fields {
             slug
