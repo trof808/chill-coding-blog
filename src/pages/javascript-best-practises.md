@@ -1,5 +1,5 @@
 ---
-title: "Лучшие практики написание кода на JavaScript"
+title: "Лучшие практики написания кода на JavaScript"
 tags: ["Frontend", "JavaScript"]
 date: "2021-02-06"
 active: "true"
