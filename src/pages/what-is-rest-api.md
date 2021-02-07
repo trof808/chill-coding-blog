@@ -34,7 +34,7 @@ Connection: close
 ```java
 // Запрос на получение данных пользователя по его id=1
 
-GET /users?size=10&orderBy=birthDate HTTP/1.1
+GET /users/1 HTTP/1.1
 Authorization: Bearer <Token>
 Content-Type: application/json
 Host: localhost:3000
@@ -42,7 +42,7 @@ Connection: close
 ```
 
 ```java
-// Запрос на добавление нового пльзователя
+// Запрос на добавление нового пользователя
 
 POST /users/add HTTP/1.1
 Content-Type: application/json; charset=utf-8
@@ -65,7 +65,7 @@ body: {"name":"Jogn","birthDate":"22-03-1995","city":"Moscow"}
 Также токены авторизации, размер данных, настройки кеширования,
 сжатия и многое-многое другое
 
-#### Типа запроса
+#### Типы запроса
 
 ```
 GET - Получение данных, дополнительные данные передаются в url параметрами.
