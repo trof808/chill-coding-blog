@@ -155,3 +155,4 @@ CSSOM строится по мере парсинга css. И может исп�
 - <a href="https://developer.mozilla.org/ru/docs/Web/Performance/Critical_rendering_path" target="_blank">MDN</a>
 - <a href="https://developer.mozilla.org/en-US/docs/Learn/Performance/HTML" target="_blank">Советы по оптимизации HTML</a>
 - <a href="https://developer.mozilla.org/en-US/docs/Learn/Performance/CSS" target="_blank">Советы по оптимизации CSS</a>
+- <a href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-tree-construction" target="_blank">Подробное описание на google developers</a>
