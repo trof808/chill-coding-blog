@@ -3,4 +3,5 @@ title: "Разбираемся с вебсокетами на примере р�
 tags: ["Frontend", "Backend"]
 active: "false"
 ready: "true"
+hide: 1
 ---

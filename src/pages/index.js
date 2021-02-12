@@ -11,13 +11,15 @@ const IndexPage = ({ data }) => {
     <Layout>
       <SEO title="Главная"/>
       <div>
-        {data.allMarkdownRemark.edges.map(({ node }) => {
+        {data.allMarkdownRemark.edges.filter(({ node }) => !node.frontmatter.hide).map(({ node }) => {
           const disabled = node.frontmatter.active === 'false';
           return (
             <article key={node.id} className={classNames('article-item')}>
               <Link to={disabled ? '#' : node.fields.slug} className={classNames({ disabled: disabled })}>{node.frontmatter.title}</Link>
+              <p id='article-excerpt'>{node.excerpt}</p>
               <div id='article-info'>
                 <span id='article-date'>{disabled ? '⌛ Ожидает публикации...' : `📅 ${node.frontmatter.date}`}</span>
+                <span id='article-date'>⏱️ {node.timeToRead} min</span>
                 <span id='article-date'>{node.frontmatter.ready === 'false' ? `✍ Будет дополняться` : ""}</span>
                 <span id='article-tags'>
                 {node.frontmatter.tags.map((t, i) => {
@@ -46,6 +48,7 @@ export const query = graphql`
       edges {
         node {
           excerpt
+          timeToRead
           html
           id
           frontmatter {
@@ -54,6 +57,7 @@ export const query = graphql`
             active
             tags
             ready
+            hide
           }
           fields {
             slug
