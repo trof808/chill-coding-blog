@@ -22,6 +22,15 @@ module.exports = {
         path: `${__dirname}/src/`,
       },
     },
+    // {
+    //   resolve: `gatsby-source-contentful`,
+    //   options: {
+    //     spaceId: `867zsleyy81p`,
+    //     // Learn about environment variables: https://gatsby.dev/env-vars
+    //     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+    //     downloadLocal: true,
+    //   },
+    // },
     `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
