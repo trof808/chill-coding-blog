@@ -8,9 +8,9 @@ export default function BlogPost({ data }) {
   return (
     <Layout>
       <SEO title={post.frontmatter.title}/>
-      <div>
+      <div className='blog-post'>
         <h1>{post.frontmatter.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <div className='blog-post__content' dangerouslySetInnerHTML={{ __html: post.html }} />
         <p>
           Надеюсь, статья была полезной!
           <br />

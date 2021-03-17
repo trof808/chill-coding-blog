@@ -1,22 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300700&display=swap')
 @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap')
 @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400700&display=swap')
+@import url('https://fonts.googleapis.com/css?family=Baloo')
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap')
 
 @import variables
 
 html
   -ms-text-size-adjust: 100%
   -webkit-text-size-adjust: 100%
-  font: 112.5%/1.45em georgia, serif, sans-serif
+  //font: 112.5%/1.45em georgia, serif, sans-serif
   box-sizing: border-box
   overflow-y: scroll
 
 body
+  background-color: $bg_color
   margin: 0
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
   color: hsla(0, 0%, 0%, 0.8)
-  font-family: 'Balsamiq Sans', georgia, serif
+  font-family: 100%/1.75 'Merriweather','Georgia',serif
   font-weight: normal
   word-wrap: break-word
   font-kerning: normal
@@ -64,6 +67,7 @@ template
 a
   background-color: transparent
   -webkit-text-decoration-skip: objects
+  text-shadow: none
 
 a:active,
 a:hover
@@ -81,15 +85,33 @@ strong
 dfn
   font-style: italic
 
-h1
+h1, h2, h3, h4, h5, h6
+  color: $main_color
   padding: 0
   margin: 0 0 1.45rem
-  color: inherit
-  font-family: 'Balsamiq Sans', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif
+  font-family: 'Balsamiq Sans', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, serif, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif
   font-weight: bold
   text-rendering: optimizeLegibility
-  font-size: 2.25rem
   line-height: 1.1
+
+h1
+  font-size: 2.25rem
+
+h2
+  font-size: 1.62671rem
+
+h3
+  font-size: 1.38316rem
+
+h4
+  font-size: 1rem
+
+h5
+  font-size: 0.85028rem
+
+h6
+  font-size: 0.78405rem
+
 
 mark
   background-color: #ff0
@@ -227,56 +249,6 @@ textarea
 
 *:after
   box-sizing: inherit
-
-h2
-  padding: 0
-  margin: 0 0 1.45rem
-  color: inherit
-  font-family: 'Balsamiq Sans', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif
-  font-weight: bold
-  text-rendering: optimizeLegibility
-  font-size: 1.62671rem
-  line-height: 1.1
-
-h3
-  padding: 0
-  margin: 0 0 1.45rem
-  color: inherit
-  font-family: 'Balsamiq Sans', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif
-  font-weight: bold
-  text-rendering: optimizeLegibility
-  font-size: 1.38316rem
-  line-height: 1.1
-
-h4
-  padding: 0
-  margin: 0 0 1.45rem
-  color: inherit
-  font-family: 'Balsamiq Sans', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif
-  font-weight: bold
-  text-rendering: optimizeLegibility
-  font-size: 1rem
-  line-height: 1.1
-
-h5
-  padding: 0
-  margin: 0 0 1.45rem
-  color: inherit
-  font-family: 'Balsamiq Sans', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif
-  font-weight: bold
-  text-rendering: optimizeLegibility
-  font-size: 0.85028rem
-  line-height: 1.1
-
-h6
-  padding: 0
-  margin: 0 0 1.45rem
-  color: inherit
-  font-family: 'Balsamiq Sans', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, serif, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif
-  font-weight: bold
-  text-rendering: optimizeLegibility
-  font-size: 0.78405rem
-  line-height: 1.1
 
 hgroup
   padding: 0
@@ -459,26 +431,28 @@ pre tt:after
 
 
 h1#logo
-  color: #1f3c88
+  font-family: 'Baloo', cursive
   font-weight: 700
   > a
     font-size: 4.25rem
     text-decoration: none
-    color: #070d59
+    color: $main_color
     text-shadow: none
     background-image: none
   > p
-    color: $accent_color
+    color: $secondary_color
     font-size: 25px
+    margin-top: -15px
+    margin-left: 2px
 
 article
   > a
-    font-size: 2.2rem
+    font-size: 1.8rem
     text-decoration: none
     font-weight: 800
     text-shadow: none
     background-image: none
-    color: #1f3c88
+    color: $main_color
     font-family: 'Balsamiq Sans',serif
     line-height: 1
 
@@ -496,6 +470,7 @@ article
     color: rgba(7, 13, 89, 0.22)
   > #article-excerpt
     margin: 1rem 0px
+    font-size: 16px
 
 @media screen and (max-width: 500px)
   h1#logo
@@ -516,3 +491,16 @@ article
   margin: 1em 0
   //padding: 1em
   overflow: auto
+
+.tag-item
+  background-color: $accent_color
+  padding: 3px 8px
+  border-radius: 5px
+  font-size: .8rem
+  &:nth-child(2n)
+    margin: 0 5px
+
+.blog-post__content
+  p
+    font-size: 16px
+    font-weight: 400

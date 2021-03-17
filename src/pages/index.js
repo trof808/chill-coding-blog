@@ -24,7 +24,7 @@ const IndexPage = ({ data }) => {
                 <span id='article-tags'>
                 {node.frontmatter.tags.map((t, i) => {
                   return (
-                    `${i !== 0 ? ', ' : ''}#${t}`
+                    <span className='tag-item'>#{t}</span>
                   )
                 })}
               </span>
