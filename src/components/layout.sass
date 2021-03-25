@@ -1,8 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300700&display=swap')
-@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap')
-@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400700&display=swap')
 @import url('https://fonts.googleapis.com/css?family=Baloo')
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap')
 
 @import variables
 
@@ -14,11 +13,11 @@ html
   overflow-y: scroll
 
 body
-  background-color: $bg_color
+  background-color: $main_color
   margin: 0
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
-  color: hsla(0, 0%, 0%, 0.8)
+  color: $bg_color
   font-family: 100%/1.75 'Merriweather','Georgia',serif
   font-weight: normal
   word-wrap: break-word
@@ -27,6 +26,9 @@ body
   -ms-font-feature-settings: "kern", "liga", "clig", "calt"
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt"
   font-feature-settings: "kern", "liga", "clig", "calt"
+
+p
+  color: $bg_color
 
 article,
 aside,
@@ -68,6 +70,8 @@ a
   background-color: transparent
   -webkit-text-decoration-skip: objects
   text-shadow: none
+  color: $accent_color
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, $accent_color 1px, $accent_color 2px, rgba(0, 0, 0, 0) 2px)
 
 a:active,
 a:hover
@@ -86,13 +90,14 @@ dfn
   font-style: italic
 
 h1, h2, h3, h4, h5, h6
-  color: $main_color
+  color: $bg_color
   padding: 0
   margin: 0 0 1.45rem
-  font-family: 'Balsamiq Sans', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, serif, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif
+  font-family: 'Oswald', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, serif, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif
   font-weight: bold
   text-rendering: optimizeLegibility
   line-height: 1.1
+  letter-spacing: .1rem
 
 h1
   font-size: 2.25rem
@@ -299,6 +304,7 @@ table
 blockquote
   padding: 0
   margin: 0 1.45rem 1.45rem
+  border-left: 0.54375rem solid $accent_color
 
 form
   padding: 0
@@ -433,10 +439,11 @@ pre tt:after
 h1#logo
   font-family: 'Baloo', cursive
   font-weight: 700
+  letter-spacing: 0
   > a
     font-size: 4.25rem
     text-decoration: none
-    color: $main_color
+    color: $accent_color
     text-shadow: none
     background-image: none
   > p
@@ -452,24 +459,25 @@ article
     font-weight: 800
     text-shadow: none
     background-image: none
-    color: $main_color
-    font-family: 'Balsamiq Sans',serif
+    color: $bg_color
+    font-family: 'Oswald',serif
     line-height: 1
+    letter-spacing: .1rem
 
 .article-item
   display: flex
   flex-direction: column
   margin-top: 50px
   > div#article-info
-    margin-top: 10px
     > span
+      font-size: 14px
       margin-right: 10px
   > a.disabled
     pointer-events: none
     cursor: default
     color: rgba(7, 13, 89, 0.22)
   > #article-excerpt
-    margin: 1rem 0px
+    margin: 0
     font-size: 16px
 
 @media screen and (max-width: 500px)
@@ -496,7 +504,8 @@ article
   background-color: $accent_color
   padding: 3px 8px
   border-radius: 5px
-  font-size: .8rem
+  font-size: .7rem
+  color: $main_color
   &:nth-child(2n)
     margin: 0 5px
 
