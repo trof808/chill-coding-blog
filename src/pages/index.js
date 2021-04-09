@@ -11,7 +11,7 @@ const IndexPage = ({ data }) => {
     <Layout>
       <SEO title="Главная"/>
       <div>
-        {data.allMarkdownRemark.edges.filter(({ node }) => !node.frontmatter.hide).map(({ node }) => {
+        {data.allMarkdownRemark.edges.filter(({ node }) => node && !node?.frontmatter.hide).map(({ node }) => {
           const disabled = node.frontmatter.active === 'false';
           return (
             <article key={node.id} className={classNames('article-item')}>
@@ -21,7 +21,7 @@ const IndexPage = ({ data }) => {
                 <span id='article-date'>⏱️ {node.timeToRead} min</span>
                 <span id='article-date'>{node.frontmatter.ready === 'false' ? `✍ Будет дополняться` : ""}</span>
                 <span id='article-tags'>
-                {node.frontmatter.tags.map((t, i) => {
+                {node?.frontmatter?.tags?.map((t, i) => {
                   return (
                     <span className='tag-item'>#{t}</span>
                   )

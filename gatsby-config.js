@@ -8,8 +8,6 @@ module.exports = {
   plugins: [
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
-    'gatsby-plugin-readingtime-contentful',
-    '@contentful/gatsby-transformer-contentful-richtext',
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -22,15 +20,6 @@ module.exports = {
       options: {
         name: `src`,
         path: `${__dirname}/src/`,
-      },
-    },
-    {
-      resolve: `gatsby-source-contentful`,
-      options: {
-        spaceId: `867zsleyy81p`,
-        // Learn about environment variables: https://gatsby.dev/env-vars
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-        downloadLocal: true,
       },
     },
     `gatsby-transformer-remark`,
