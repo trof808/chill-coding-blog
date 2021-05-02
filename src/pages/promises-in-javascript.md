@@ -1,7 +1,7 @@
 ---
 title: "Что нужно знать про работу с промисами в js"
 date: "2021-05-02"
-tags: ["Советы"]
+tags: ["JavaScript", "Frontend"]
 active: "true"
 ---
 
